@@ -101,8 +101,14 @@ address {
 }
 
 .section {
-  padding-bottom: 120px;
+  padding: 96px 0;
   margin: 0 auto;
+}
+
+@media screen and (min-width: 1158px) {
+  .section {
+    padding: 120px 0;
+  }
 }
 
 .btn {
@@ -133,10 +139,24 @@ address {
 
 .subtitle {
   color: var(--navy-blue);
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.2;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
   letter-spacing: 0.02em;
+}
+
+@media screen and (max-width: 767px) {
+  .subtitle {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .subtitle {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+  }
 }
 
 .text {
@@ -155,13 +175,19 @@ address {
 .header-page {
   background-color: var(--white);
   border-bottom: 1px solid var(--cornflower);
-  padding: 24px 0;
+  padding: 14px 0;
   margin: 0 auto;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1157px) {
+@media screen and (min-width: 768px) {
   .header-page {
     padding: 16px 0;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .header-page {
+    padding: 24px 0;
   }
 }
 
@@ -246,12 +272,6 @@ address {
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1157px) {
-  .nav-current::after {
-    bottom: -30px;
-  }
-}
-
 @media screen and (min-width: 1158px) {
   .nav-menu {
     gap: 76px;
@@ -274,6 +294,7 @@ address {
   }
 
   .address-link {
+    display: block;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
@@ -310,11 +331,18 @@ address {
 /** === BURGER BUTTON  ========================================================= **/
 
 .burger-btn {
+  display: flex;
+  background-color: transparent;
+  border: none;
+
+  margin: 0;
+  padding: 0;
 }
 
 .burger-btn-icon {
-  width: 32px;
-  height: 22px;
+  width: 44px;
+  height: 44px;
+  fill: var(--navy-blue);
 }
 
 @media screen and (min-width: 768px) {
@@ -335,10 +363,7 @@ address {
 
   background-color: var(--navy-blue);
 
-  background-image: linear-gradient(
-      rgba(46, 47, 66, 0.7),
-      rgba(46, 47, 66, 0.7)
-    ),
+  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
     url("../images/hero-bg.jpg");
   background-repeat: no-repeat;
   background-position: center center;
@@ -373,58 +398,88 @@ address {
 
 /* #region STUDIO SECTION COMPONENTS ======================================= */
 
-/* .components-section {
-  padding-top: 120px;
-} */
+.components-section {
+  padding-top: 96px;
+}
 
-/* .components-list {
-  display: flex;
-  flex-wrap: wrap;
+.components-item:not(:last-child) {
+  margin-bottom: 72px;
+}
 
-  margin-left: -24px;
-} */
+.components-pic {
+  display: none;
+}
 
-/* .components-item {
-  flex-basis: calc(100% / 4 - 24px);
+@media screen and (min-width: 768px) {
+  .components-list {
+    display: flex;
+    flex-wrap: wrap;
 
-  background: var(--white);
-  margin-left: 24px;
-} */
+    margin-left: -24px;
+  }
 
-/* .components-pic {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 264px;
-  height: 112px;
-  background-color: var(--cloud);
-  border-radius: 4px;
+  .components-item {
+    flex-basis: calc(100% / 2 - 24px);
 
-  margin-bottom: 8px;
-} */
+    margin-left: 24px;
+  }
+}
 
-/* .components-icon {
-  width: 64px;
-  height: 64px;
-} */
+@media screen and (min-width: 1158px) {
+  .components-section {
+    padding-top: 120px;
+  }
+
+  .components-item {
+    flex-basis: calc(100% / 4 - 24px);
+  }
+
+  .components-item:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  .components-pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 112px;
+    background-color: var(--cloud);
+    border-radius: 4px;
+
+    margin-bottom: 8px;
+  }
+}
 
 /* #endregion STUDIO SECTION COMPONENTS ======================================= */
 
 /* #region STUDIO SECTION WORKS ============================================ */
 
-/* .works-list {
-  display: flex;
-  flex-wrap: wrap;
+.works-section {
+  display: none;
 
-  margin-top: 72px;
-  margin-left: -24px;
-} */
+  padding-top: 0;
+}
 
-/* .works-item {
-  flex-basis: calc(100% / 3 - 24px);
+@media screen and (min-width: 1158px) {
+  .works-section {
+    display: block;
+  }
 
-  margin-left: 24px;
-} */
+  .works-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-top: 72px;
+    margin-left: -24px;
+  }
+
+  .works-item {
+    flex-basis: calc(100% / 3 - 24px);
+
+    margin-left: 24px;
+  }
+}
 
 /* #endregion STUDIO SECTION WORKS ============================================ */
 
